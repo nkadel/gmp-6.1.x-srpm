@@ -8,8 +8,8 @@
 Summary: A GNU arbitrary precision library
 Name: gmp
 Version: 6.1.2
-Release: 0.16%{?dist}
-Epoch: 0.2
+Release: 1.16%{?dist}
+Epoch: 1
 URL: http://gmplib.org/
 Source0: https://gmplib.org/download/gmp/gmp-%{version}.tar.lz
 # or https://ftp.gnu.org/pub/gnu/gmp/gmp-%{version}.tar.xz
@@ -260,11 +260,11 @@ exit 0
 
 
 %changelog
-* Tue Oct 26 2021 Nico Kadel-Garcia <nkadel@gmail.com>
+* Tue Oct 26 2021 Nico Kadel-Garcia <nkadel@gmail.com> - 1:6.0.0-0.16
 - Change Source URL to new lzip tarball
 - Add gcc-c++ and lzip to BuildRequires
 
-* Thu Sep 24 2020 Sérgio Basto <sergio@serjux.com> - 1:6.0.0-0.15
+* Thu Sep 24 2020 Sérgio Basto <sergio@serjux.com> - 1:6.0.0-15
 - Update to 6.1.2, hopefully 100% backward compatible to 6.0.0
 https://abi-laboratory.pro/?view=timeline&l=gmp
 
