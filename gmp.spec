@@ -8,11 +8,11 @@
 Summary: A GNU arbitrary precision library
 Name: gmp
 Version: 6.1.2
-Release: 1%{?dist}
-Epoch: 1
+Release: 0.16%{?dist}
+Epoch: 0.2
 URL: http://gmplib.org/
-Source0: ftp://ftp.gmplib.org/pub/gmp-%{version}/gmp-%{version}.tar.bz2
-# or ftp://ftp.gnu.org/pub/gnu/gmp/gmp-%{version}.tar.xz
+Source0: https://gmplib.org/download/gmp/gmp-%{version}.tar.lz
+# or https://ftp.gnu.org/pub/gnu/gmp/gmp-%{version}.tar.xz
 Source2: gmp.h
 Source3: gmp-mparam.h
 
@@ -21,6 +21,11 @@ Group: System Environment/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: autoconf automake libtool
 BuildRequires: fipscheck
+
+# Added for RHEL 7 builds
+BuildRequires: gcc-c++
+BuildRequires: lzip
+
 #autoreconf on arm needs:
 BuildRequires: perl-Carp
 
@@ -255,7 +260,11 @@ exit 0
 
 
 %changelog
-* Thu Sep 24 2020 Sérgio Basto <sergio@serjux.com> - 1:6.1.2-1
+* Tue Oct 26 2021 Nico Kadel-Garcia <nkadel@gmail.com>
+- Change Source URL to new lzip tarball
+- Add gcc-c++ and lzip to BuildRequires
+
+* Thu Sep 24 2020 Sérgio Basto <sergio@serjux.com> - 1:6.0.0-0.15
 - Update to 6.1.2, hopefully 100% backward compatible to 6.0.0
 https://abi-laboratory.pro/?view=timeline&l=gmp
 
